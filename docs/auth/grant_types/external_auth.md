@@ -12,7 +12,8 @@ Not very useful as of now due to not having the PSN/XBOX/Switch Fortnite clients
   - `grant_type`: external_auth
   - `external_auth_type`: ...
   - `external_auth_token`: ...
-  - `nonce`?: ...
+  - `deployment_id`: `deploymentId`
+  - `nonce`: ...
   
 ## Parameters
 - `external_auth_type`: an external auth type
@@ -24,4 +25,8 @@ Not very useful as of now due to not having the PSN/XBOX/Switch Fortnite clients
   - google
   - facebook
   - internal
-- `external_auth_token`: external auth token, probably issued by PSN/XBL/whatever service provider (not too sure)
+  - openid_access_token
+  - steam_encrypted_appticket - an encrypted appticket from steam (see https://partner.steamgames.com/doc/api/SteamEncryptedAppTicket)
+  - steam_session_ticket - a session ticket from steam (see https://partner.steamgames.com/doc/api/ISteamUser#GetAuthSessionTicket)
+- `external_auth_token`: a token received from the specified external source
+- `nonce`: required, but can be any string (typically something like 'E8O76rOL10KGxpgUorcXPA')
